@@ -33,6 +33,7 @@ public class App extends Application {
         scrollPane.setPrefWidth(300);
         scrollPane.setPrefHeight(150);
 
+        // TODO serait-il possible d'imaginer une solution avec une boucle ?
         GridPane gridNumbers = new GridPane();
         Button button0 = new Button("0");
         Button button1 = new Button("1");
@@ -45,6 +46,7 @@ public class App extends Application {
         Button button8 = new Button("8");
         Button button9 = new Button("9");
 
+        // TODO idem remarque 36
         gridNumbers.add(button0, 0, 0);
         gridNumbers.add(button1, 1, 0);
         gridNumbers.add(button2, 2, 0);
@@ -65,6 +67,7 @@ public class App extends Application {
             textArea.appendText(source.getText());
         };
 
+        // TODO idem boucle
         button0.setOnAction(numberButtonHandler);
         button1.setOnAction(numberButtonHandler);
         button2.setOnAction(numberButtonHandler);
@@ -93,6 +96,7 @@ public class App extends Application {
             public void handle(ActionEvent event) {
                 try {
                     String calculString = textArea.getText();
+                    // TODO pour optimisation, serait-il possible d'imaginer une solution basée sur un attribut qui serait mis-à jour au fur et à mesure des saisies utilisateur plutôt qu'une analyse de la chaîne de caractère?
                     String[] numberParts = calculString.split("\\+");
                     int sum = 0;
                     for (String numberPart : numberParts) {
